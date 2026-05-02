@@ -9,8 +9,4 @@
   status = 200
 
 [build.environment]
-  # Set this to your deployed backend URL
-  VITE_API_URL = "https://your-backend-url.render.com"
-
-# Environment variables (set these in Netlify dashboard as well)
-# VITE_API_URL = https://your-deployed-backend.render.com
+  VITE_API_BASE_URL = "https://fsad-final-review.up.railway.app"
