@@ -1,18 +1,16 @@
 # Railway Configuration for SafeSupport Backend (Root level for monorepo)
 
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "cd student-management-system && java -jar target/safesupport-0.0.1-SNAPSHOT.jar"
+healthcheckPath = "/"
+
 [env]
 SPRING_PROFILES_ACTIVE = "production"
 PORT = "8080"
 
-[[services]]
-name = "SafeSupport Backend"
-source = "./student-management-system"
-buildCommand = "cd student-management-system && ./mvnw clean package"
-startCommand = "cd student-management-system && java -jar target/safesupport-0.0.1-SNAPSHOT.jar"
-
-[services.variables]
-SPRING_PROFILES_ACTIVE = "production"
-PORT = "8080"
 # Add these in Railway dashboard:
 # DATABASE_URL = jdbc:mysql://your-mysql-host/fsad
 # DATABASE_USER = your_db_user
